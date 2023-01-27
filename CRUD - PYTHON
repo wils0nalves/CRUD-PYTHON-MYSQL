@@ -1,0 +1,44 @@
+import mysql.connector
+
+conexao = mysql.connector.connect(
+    host = 'localhost',
+    user = 'wilson',
+    password = '@W1ls0nyur1',
+    database = 'cliente',
+)
+
+cursor = conexao.cursor()
+
+#CRUD
+
+#-----------CREATE
+    #nome = "João das coves"
+    #email = "joaocoves@gmail.com"
+    #cidade = "Fortal"
+    #uf = "CE"
+
+    #comando = f'INSERT INTO dados_clientes (nome, email, cidade, uf) VALUES ("{nome}", "{email}", "{cidade}", "{uf}")'
+    #cursor.execute(comando)
+
+    #conexao.commit() #serve para poder editar um item em um banco de dados por exemplo
+
+#-----------READ
+    #comando = f'SELECT * FROM dados_clientes'
+    #cursor.execute(comando)
+    #resultado = cursor.fetchall() #lendo o bando de dados ou seja apenas para leitura dos dados
+    #print(resultado)
+
+#-----------UPDATE
+#nome = "Lucas Serejo"
+#valor = 4
+#comando = f'UPDATE dados_clientes SET nome = "{nome}" WHERE id = {valor}'
+#cursor.execute(comando)
+#conexao.commit() #serve para poder editar um item em um banco de dados por exemplo
+
+#-----------DELETE
+comando = f'DELETE FROM dados_clientes WHERE id = 5'
+cursor.execute(comando)
+conexao.commit() #serve para poder editar um item em um banco de dados por exemplo
+
+cursor.close()
+conexao.close()
